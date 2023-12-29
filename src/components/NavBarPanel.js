@@ -4,8 +4,12 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 
 const Navbars = () => {
+    const cartProduct = useSelector(state=>state.cart);
+    console.log(cartProduct)
     return (
         <div>
             <Navbar expand="lg" className="bg-body-tertiary">
@@ -24,7 +28,7 @@ const Navbars = () => {
                             <Navbar.Toggle />
                             <Navbar.Collapse className='justify-content-end'>
                                 <Navbar.Text>
-                                    <Nav.Link to="/cart" as={Link}>My Bag 0</Nav.Link>
+                                    <Nav.Link to="/cart" as={Link}>My Bag {cartProduct.length}</Nav.Link>
                                 </Navbar.Text>
                             </Navbar.Collapse>
 

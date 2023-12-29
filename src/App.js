@@ -1,4 +1,4 @@
- import './App.css';
+import './App.css';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -12,16 +12,16 @@ import RootLayout from './components/RootLayout';
 function App() {
   const router = createBrowserRouter(createRoutesFromElements(
     <Route>
-      <Route path='/' element={<RootLayout/>}>
-         <Route index  element={<Dashboard/>}></Route>  
-         <Route path="/cart"  element={<Cart/>}></Route> 
+      <Route path='/' element={<RootLayout />}>
+        <Route index element={<Dashboard />}></Route>
+        <Route path="/cart" element={<Cart />}></Route>
       </Route>
     </Route>
   ))
   return (
     <div className='App'>
-        {/* <Product/> */}
-        <RouterProvider router={router} />
+      {/* <Product/> */}
+      <RouterProvider router={router} />
     </div>
   );
 }
